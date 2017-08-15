@@ -39,7 +39,7 @@ springfox:
 
 
 ---
-#####Footnotes
+##### Footnotes
 
 This application was bootstrapped from 
 * [Microserices, APIs, and Swagger: How They Fit Together](https://swaggerhub.com/blog/api-strategy/microservices-apis-and-swagger/)
