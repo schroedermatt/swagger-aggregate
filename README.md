@@ -6,16 +6,15 @@ In the **application.yml** file, configure all microservice api-docs endpoints. 
 
 ```
 documentation: 
-  baseurl: http://api.path.com
   swagger: 
     services:   
       - 
         name: Important Service
-        url: ${documentation.baseurl}/v2/api-docs
+        url: /v2/api-docs
         version: 2.0
       - 
         name: Another Service
-        url: ${documentation.baseurl}/path/to/api-docs
+        url: /path/to/api-docs
         version: 2.0
 ```
 
@@ -42,5 +41,5 @@ springfox:
 #####Footnotes
 
 This application was bootstrapped from 
-* [Microserices, APIs, and Swagger: How They Fit Together](https://swaggerhub.com/blog/api-strategy/microservices-apis-and-swagger/)
+* [Microservices API Documentation with Swagger2](https://piotrminkowski.wordpress.com/2017/04/14/microservices-api-documentation-with-swagger2/)
 * [Microservices Single Swagger](https://github.com/varghgeorge/microservices-single-swagger)

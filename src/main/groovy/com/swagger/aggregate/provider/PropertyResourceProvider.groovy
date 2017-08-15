@@ -1,4 +1,4 @@
-package com.swagger.aggregate.controller
+package com.swagger.aggregate.provider
 
 import com.swagger.aggregate.config.SwaggerServicesConfig
 import org.springframework.beans.factory.annotation.Autowired
@@ -9,7 +9,7 @@ import springfox.documentation.swagger.web.SwaggerResourcesProvider
 
 @Controller
 @Primary
-class SwaggerResourcesController implements SwaggerResourcesProvider {
+class PropertyResourceProvider implements SwaggerResourcesProvider {
     @Autowired
     private SwaggerServicesConfig config
 

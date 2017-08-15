@@ -12,7 +12,7 @@ buildscript {
 }
 
 // update to your dockerhub user
-group = 'mattschroeder'
+group = 'dockerhub-username-here'
 
 apply plugin: 'groovy'
 apply plugin: 'idea'
