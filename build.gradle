@@ -1,0 +1,61 @@
+buildscript {
+	ext {
+		springBootVersion = '1.5.4.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+		classpath("se.transmode.gradle:gradle-docker:1.2")
+	}
+}
+
+// update to your dockerhub user
+group = 'mattschroeder'
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'docker'
+
+jar {
+	baseName = 'swagger-aggregate'
+	version = '0.1.0'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	// groovy
+	compile('org.codehaus.groovy:groovy-all:2.4.7')
+
+	// boot
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-logging')
+
+	// swagger
+	compile ('io.springfox:springfox-swagger-ui:2.7.0')
+	compile ('io.springfox:springfox-swagger2:2.7.0')
+}
+
+// tag::DOCKER
+task buildDocker(type: Docker, dependsOn: build) {
+	push = true
+	applicationName = jar.baseName
+
+	dockerfile = file('src/main/docker/Dockerfile')
+	doFirst {
+		copy {
+			from jar
+			into "build/docker/target"
+		}
+	}
+}
+// end::DOCKER

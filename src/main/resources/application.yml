@@ -1,0 +1,15 @@
+---
+server:
+  context-path: /api
+documentation:
+  baseurl: http://ecs-alb-1099484506.us-east-2.elb.amazonaws.com/api
+  swagger:
+    services:
+      -
+        name: Location
+        url: ${documentation.baseurl}/locations/api-docs
+        version: 2.0
+      - 
+        name: Ticket
+        url: ${documentation.baseurl}/tickets/api-docs
+        version: 2.0
