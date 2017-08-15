@@ -38,7 +38,7 @@ springfox:
 
 
 ---
-#####Footnotes
+##### Footnotes
 
 This application was bootstrapped from 
 * [Microservices API Documentation with Swagger2](https://piotrminkowski.wordpress.com/2017/04/14/microservices-api-documentation-with-swagger2/)
