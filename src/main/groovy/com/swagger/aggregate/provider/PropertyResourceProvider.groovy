@@ -16,7 +16,7 @@ class PropertyResourceProvider implements SwaggerResourcesProvider {
     /**
      * Build and return list of Swagger Resources (i.e. each microservice api-docs info)
      */
-	@Override
+    @Override
     List get() {
         config.services.collect { svc ->
             new SwaggerResource(
